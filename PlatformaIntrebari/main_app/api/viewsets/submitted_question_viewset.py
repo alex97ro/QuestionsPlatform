@@ -44,7 +44,7 @@ class SubmittedQuestionViewSet(viewsets.ModelViewSet):
         for existing_question in SubmittedQuestion.objects.all():
             similarity = fuzz.token_sort_ratio(existing_question.question_text, question)
             print(similarity)
-            if similarity > 80:
+            if similarity > 75:
                 return None, False, f"Question is too similar to an existing question: '{existing_question.question_text}'"
 
         return answer_tuples, True, "Valid submission"

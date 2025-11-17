@@ -4,5 +4,5 @@ from rest_framework.routers import DefaultRouter
 from main_app.api.viewsets.submitted_question_viewset import SubmittedQuestionViewSet
 
 router = DefaultRouter()
-router.register('questions', SubmittedQuestionViewSet)
+router.register('questions', SubmittedQuestionViewSet,basename='questions')
 urlpatterns = [path('', include(router.urls))]
